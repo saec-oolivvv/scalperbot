@@ -4,7 +4,7 @@ set -e
 # --- CONFIGURATION ---
 GITHUB_REPO_NAME="scalperbot"        # Nom du dépôt GitHub
 GITHUB_VISIBILITY="public"           # public ou private
-GIT_USER_NAME="SAEC Expert"          # Ton nom Git
+GIT_USER_NAME="saec-oolivvv"          # Ton nom Git
 GIT_USER_EMAIL="sa.expert.consult@gmail.com" # Ton email GitHub
 
 #!/bin/bash
