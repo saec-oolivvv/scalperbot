@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: scalperbot_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - POSTGRES_USER=saec
+      - POSTGRES_PASSWORD=saec123
+      - POSTGRES_DB=scalperbot
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: scalperbot_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    container_name: scalperbot_postgres
+    environment:
+      - POSTGRES_USER=saec
+      - POSTGRES_PASSWORD=saec123
+      - POSTGRES_DB=scalperbot
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
